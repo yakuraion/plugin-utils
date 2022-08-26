@@ -6,6 +6,11 @@ plugins {
 group = "pro.yakuraion.plugins.utils"
 version = "1.0-SNAPSHOT"
 
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
 publishing {
     publications {
         create<MavenPublication>("maven") {
