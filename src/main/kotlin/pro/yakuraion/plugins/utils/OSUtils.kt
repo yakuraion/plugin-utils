@@ -10,7 +10,7 @@ fun Project.openFileByOS(file: File) {
         currentOS.isMacOsX -> listOf("open")
         currentOS.isLinux -> listOf("xdg-open")
         currentOS.isWindows -> listOf("cmd", "/c", "start")
-        else -> throw Exception("Unsupported OS: ${currentOS.name}")
+        else -> error("Unsupported OS: ${currentOS.name}")
     } + listOf(file.absolutePath)
     exec {
         commandLine(args)
